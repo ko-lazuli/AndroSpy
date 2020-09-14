@@ -14,10 +14,10 @@ Android 9.0   - OK
 
 AndroSpy Project aims to most powerful-stable-useful open source Android RAT.  
 
-https://www.youtube.com/watch?v=c0Diw3tQhB8  
+<img src="https://user-images.githubusercontent.com/45147475/93096997-b5514a00-f6ad-11ea-83e0-c4b21dd102e2.PNG" width="50%"></img>   
 
 # Version 3  
-+Added live Camera stream  
++Added live Camera stream (with resolution,zoom,flash controls and scene,focus,white balance mode)  
 +Fixed loss data transfer  
 +Some excess codes have been removed  
 +Performance has been increased
