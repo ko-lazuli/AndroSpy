@@ -1,7 +1,9 @@
-# AndroSpy  
+# AndroSpy - Xamarin-C# Android RAT  
 <img src="https://user-images.githubusercontent.com/45147475/89324496-096d1580-d690-11ea-86d2-1b8b1d484d35.png" width="25%"></img>   
 
 An Android RAT that written in completely C# by me (qH0sT a.k.a Sagopa K)  
+
+I am AFK while 4 months.... Don't open issue.
 
 Minumum Android Version: 4.1    
 
