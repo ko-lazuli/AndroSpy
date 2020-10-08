@@ -21,7 +21,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("UPDATE", "[VERI]" + textBox1.Text + "[VERI]" + textBox2.Text + "[VERI]"
+                    MainWindow.GoToOurSocket("UPDATE", "[VERI]" + textBox1.Text + "[VERI]" + textBox2.Text + "[VERI]"
                         + numericUpDown1.Value.ToString() + "[VERI][0x09]", socket);
                     Close();
                 }

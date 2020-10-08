@@ -41,7 +41,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("VOLUMELEVELS", "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("VOLUMELEVELS", "[VERI][0x09]", sock);
             }
             catch (Exception) { }
         }
@@ -49,7 +49,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("ZILSESI", "[VERI]" + trackBar1.Value.ToString() + "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("ZILSESI", "[VERI]" + trackBar1.Value.ToString() + "[VERI][0x09]", sock);
                 yenile();
             }
             catch (Exception) { }
@@ -59,7 +59,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("MEDYASESI", "[VERI]" + trackBar2.Value.ToString() + "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("MEDYASESI", "[VERI]" + trackBar2.Value.ToString() + "[VERI][0x09]", sock);
                 yenile();
             }
             catch (Exception) { }
@@ -69,7 +69,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("BILDIRIMSESI", "[VERI]" + trackBar3.Value.ToString() + "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("BILDIRIMSESI", "[VERI]" + trackBar3.Value.ToString() + "[VERI][0x09]", sock);
                 yenile();
             }
             catch (Exception) { }
@@ -80,7 +80,7 @@ namespace Server.Views
             //PARLAKLIK
             try
             {
-                MainWindow.KomutGonder("PARLAKLIK", "[VERI]" + trackBar4.Value.ToString() + "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("PARLAKLIK", "[VERI]" + trackBar4.Value.ToString() + "[VERI][0x09]", sock);
                 yenile();
             }
             catch (Exception) { }

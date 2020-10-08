@@ -17,7 +17,7 @@ namespace Server.Views
         //
         private void button1_Click(object sender, EventArgs e)
         {
-           MainWindow.KomutGonder("DOWNFILE", "[VERI]" + textBox1.Text + "[VERI]" + textBox2.Text + "[VERI][0x09]", sck);
+           MainWindow.GoToOurSocket("DOWNFILE", "[VERI]" + textBox1.Text + "[VERI]" + textBox2.Text + "[VERI][0x09]", sck);
         }
     }
 }

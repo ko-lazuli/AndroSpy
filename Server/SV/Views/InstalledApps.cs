@@ -43,7 +43,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("APPLICATIONS", "[VERI][0x09]", socket);
+                MainWindow.GoToOurSocket("APPLICATIONS", "[VERI][0x09]", socket);
             }
             catch (Exception) { }
         }
@@ -52,7 +52,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("OPENAPP", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", socket);
+                MainWindow.GoToOurSocket("OPENAPP", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", socket);
             }
             catch (Exception) { }
         }

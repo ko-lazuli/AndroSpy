@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddContact));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.numberText = new System.Windows.Forms.TextBox();
+            this.nameText = new System.Windows.Forms.TextBox();
+            this.addButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // numberText
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(274, 20);
-            this.textBox1.TabIndex = 0;
+            this.numberText.Location = new System.Drawing.Point(57, 72);
+            this.numberText.Name = "numberText";
+            this.numberText.Size = new System.Drawing.Size(274, 20);
+            this.numberText.TabIndex = 0;
             // 
-            // textBox2
+            // nameText
             // 
-            this.textBox2.Location = new System.Drawing.Point(57, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(274, 20);
-            this.textBox2.TabIndex = 0;
+            this.nameText.Location = new System.Drawing.Point(57, 31);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(274, 20);
+            this.nameText.TabIndex = 0;
             // 
-            // button1
+            // addButton
             // 
-            this.button1.Location = new System.Drawing.Point(256, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.addButton.Location = new System.Drawing.Point(256, 98);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.OnAddContact);
             // 
             // label1
             // 
@@ -85,9 +85,9 @@
             this.ClientSize = new System.Drawing.Size(403, 137);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.nameText);
+            this.Controls.Add(this.numberText);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -101,9 +101,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox numberText;
+        private System.Windows.Forms.TextBox nameText;
+        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

@@ -59,7 +59,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("MIC", "[VERI]BASLA[VERI]" + comboBox1.SelectedItem.ToString() + "[VERI]" + comboBox2.SelectedItem.ToString()
+                MainWindow.GoToOurSocket("MIC", "[VERI]BASLA[VERI]" + comboBox1.SelectedItem.ToString() + "[VERI]" + comboBox2.SelectedItem.ToString()
                     + "[VERI][0x09]", sc);
                 if (ipep == null && newsock == null)
                 {
@@ -78,7 +78,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("MIC", "[VERI]DURDUR[VERI][0x09]", sc);
+                MainWindow.GoToOurSocket("MIC", "[VERI]DURDUR[VERI][0x09]", sc);
             }
             catch (Exception) { }
             try

@@ -20,7 +20,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("SMSGONDER", "[VERI]" + textBox1.Text + "=" + textBox2.Text + "=[VERI][0x09]", s);
+                    MainWindow.GoToOurSocket("SMSGONDER", "[VERI]" + textBox1.Text + "=" + textBox2.Text + "=[VERI][0x09]", s);
                     MessageBox.Show("SMS was sent.", "SMS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception) { }

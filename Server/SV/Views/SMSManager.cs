@@ -60,7 +60,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("GELENKUTUSU", "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("GELENKUTUSU", "[VERI][0x09]", sck);
                 Text = "Sms Yöneticisi";
             }
             catch (Exception) { }
@@ -70,7 +70,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("GIDENKUTUSU", "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("GIDENKUTUSU", "[VERI][0x09]", sck);
                 Text = "Sms Yöneticisi";
             }
             catch (Exception) { }

