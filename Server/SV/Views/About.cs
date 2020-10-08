@@ -32,6 +32,11 @@ namespace Server.Views
             alphabet = string.Join("", letters);
         }
 
+        /// <summary>
+        /// Handles the about form loading event
+        /// </summary>
+        /// <param name="sender">This form</param>
+        /// <param name="e">Event Args</param>
         private async void OnAboutLoad(object sender, EventArgs e)
         {
             string result = "simpsons";

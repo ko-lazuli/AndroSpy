@@ -42,6 +42,7 @@ C:\Users\simpl\OneDrive\Documentos\Projects\AndroSpy\Server\SV\bin\Debug\AndroSp
 C:\Users\simpl\OneDrive\Documentos\Projects\AndroSpy\Server\SV\bin\Debug\AndroSpy.pdb
 C:\Users\simpl\OneDrive\Documentos\Projects\AndroSpy\Server\SV\bin\Debug\NAudio.dll
 C:\Users\simpl\OneDrive\Documentos\Projects\AndroSpy\Server\SV\bin\Debug\NAudio.xml
+C:\Users\simpl\OneDrive\Documentos\Projects\AndroSpy\Server\SV\obj\Debug\Server.csprojAssemblyReference.cache
 C:\Users\simpl\OneDrive\Documentos\Projects\AndroSpy\Server\SV\obj\Debug\Server.Views.Settings.resources
 C:\Users\simpl\OneDrive\Documentos\Projects\AndroSpy\Server\SV\obj\Debug\Server.Views.Connection.resources
 C:\Users\simpl\OneDrive\Documentos\Projects\AndroSpy\Server\SV\obj\Debug\Server.Views.Infos.resources
