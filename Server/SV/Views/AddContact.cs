@@ -9,7 +9,7 @@ namespace Server.Views
     /// </summary>
     public partial class AddContact : Form
     {
-        Socket socket;
+        readonly Socket socket;
 
         /// <summary>
         /// Creates a new instance of <see cref="AddContact"/> class
@@ -30,7 +30,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.GoToOurSocket("REHBERISIM", "[VERI]" + numberText.Text + "=" + nameText.Text + "=[VERI][0x09]", socket);
+                MainWindow.GoToOurSocket("REHBERISIM", $"[VERI]{numberText.Text}={nameText.Text}=[VERI][0x09]", socket);
             }
             catch (Exception) { }
             Close();

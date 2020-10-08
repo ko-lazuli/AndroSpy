@@ -674,7 +674,7 @@ namespace Server.Views
             {
                 var list = Application.OpenForms
               .OfType<AddressBook>()
-              .Where(form => string.Equals(form.ID, ident))
+              .Where(form => string.Equals(form.Id, ident))
                .ToList();
                 return list.First();
             }
