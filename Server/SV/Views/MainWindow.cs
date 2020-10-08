@@ -331,7 +331,7 @@ namespace Server.Views
                                     sMS.Show();
                                 });
                             }
-                            FindRehberById(soket2.Handle.ToString()).bilgileriIsle(s[1]);
+                            FindRehberById(soket2.Handle.ToString()).FetchContacts(s[1]);
                             break;
                         case "APPS":
                             if (FindUygulamalarById(soket2.Handle.ToString()) == null)
