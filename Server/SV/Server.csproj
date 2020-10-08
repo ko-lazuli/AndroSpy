@@ -140,7 +140,7 @@
     <Compile Include="Views\Location.Designer.cs">
       <DependentUpon>Location.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kurbanlar.cs" />
+    <Compile Include="Victims.cs" />
     <Compile Include="Views\CameraManager.cs">
       <SubType>Form</SubType>
     </Compile>

