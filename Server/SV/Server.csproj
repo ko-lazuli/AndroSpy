@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3428F1A-65D9-4BB7-826F-0A2A79AA2E47}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SV</RootNamespace>
+    <AssemblyName>AndroSpy</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>android_logo_9e4539a7de_seeklogo_com_mly_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Views\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConnectionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ConnectionSettings.Designer.cs">
+      <DependentUpon>ConnectionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Infos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Infos.Designer.cs">
+      <DependentUpon>Infos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewClientNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewClientNotification.Designer.cs">
+      <DependentUpon>NewClientNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AndroidAppBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AndroidAppBuilder.Designer.cs">
+      <DependentUpon>AndroidAppBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CallLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CallLogs.Designer.cs">
+      <DependentUpon>CallLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownloadManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DownloadManager.Designer.cs">
+      <DependentUpon>DownloadManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Entertainment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Entertainment.Designer.cs">
+      <DependentUpon>Entertainment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddContact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddContact.Designer.cs">
+      <DependentUpon>AddContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FİleManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FİleManager.Designer.cs">
+      <DependentUpon>FİleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewSms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ViewSms.Designer.cs">
+      <DependentUpon>ViewSms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Keylogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Keylogger.Designer.cs">
+      <DependentUpon>Keylogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Location.Designer.cs">
+      <DependentUpon>Location.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kurbanlar.cs" />
+    <Compile Include="Views\CameraManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CameraManager.Designer.cs">
+      <DependentUpon>CameraManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Microphone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Microphone.Designer.cs">
+      <DependentUpon>Microphone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Port.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Port.Designer.cs">
+      <DependentUpon>Port.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\AddressBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddressBook.Designer.cs">
+      <DependentUpon>AddressBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VictimSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\VictimSettings.Designer.cs">
+      <DependentUpon>VictimSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SMS.Designer.cs">
+      <DependentUpon>SMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewSMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewSMS.Designer.cs">
+      <DependentUpon>NewSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SMSManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SMSManager.Designer.cs">
+      <DependentUpon>SMSManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Phone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Phone.Designer.cs">
+      <DependentUpon>Phone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InstalledApps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InstalledApps.Designer.cs">
+      <DependentUpon>InstalledApps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewCall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NewCall.Designer.cs">
+      <DependentUpon>NewCall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProgressWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProgressWindow.Designer.cs">
+      <DependentUpon>ProgressWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ConnectionSettings.resx">
+      <DependentUpon>ConnectionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Infos.resx">
+      <DependentUpon>Infos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewClientNotification.resx">
+      <DependentUpon>NewClientNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AndroidAppBuilder.resx">
+      <DependentUpon>AndroidAppBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CallLogs.resx">
+      <DependentUpon>CallLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DownloadManager.resx">
+      <DependentUpon>DownloadManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Entertainment.resx">
+      <DependentUpon>Entertainment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddContact.resx">
+      <DependentUpon>AddContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FİleManager.resx">
+      <DependentUpon>FİleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ViewSms.resx">
+      <DependentUpon>ViewSms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Keylogger.resx">
+      <DependentUpon>Keylogger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CameraManager.resx">
+      <DependentUpon>CameraManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Location.resx">
+      <DependentUpon>Location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Microphone.resx">
+      <DependentUpon>Microphone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Port.resx">
+      <DependentUpon>Port.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\AddressBook.resx">
+      <DependentUpon>AddressBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VictimSettings.resx">
+      <DependentUpon>VictimSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SMS.resx">
+      <DependentUpon>SMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewSMS.resx">
+      <DependentUpon>NewSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SMSManager.resx">
+      <DependentUpon>SMSManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Phone.resx">
+      <DependentUpon>Phone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InstalledApps.resx">
+      <DependentUpon>InstalledApps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NewCall.resx">
+      <DependentUpon>NewCall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProgressWindow.resx">
+      <DependentUpon>ProgressWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="android_logo_9e4539a7de_seeklogo_com_mly_icon.ico" />
+    <None Include="bin\Debug\resources\File Manager\nothing.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
