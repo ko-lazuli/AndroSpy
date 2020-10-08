@@ -92,7 +92,7 @@
             this.Name = "About";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
-            this.Load += new System.EventHandler(this.Hakkinda_Load);
+            this.Load += new System.EventHandler(this.OnAboutLoad);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
