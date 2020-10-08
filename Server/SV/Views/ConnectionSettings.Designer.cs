@@ -1,4 +1,4 @@
-﻿namespace SV
+﻿namespace Server.Views
 {
     partial class Connection
     {

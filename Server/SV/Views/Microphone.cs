@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows.Forms;
-namespace SV
+namespace Server.Views
 {
     public partial class Microphone : Form
     {

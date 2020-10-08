@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
 
-namespace SV
+namespace Server.Views
 {
     public partial class YeniArama : Form
     {

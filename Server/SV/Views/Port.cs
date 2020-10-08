@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace SV
+namespace Server.Views
 {
     public partial class Port : Form
     {

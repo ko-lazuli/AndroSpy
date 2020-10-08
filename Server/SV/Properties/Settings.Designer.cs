@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SV.Properties
+namespace Server.Views.Properties
 {
 
 

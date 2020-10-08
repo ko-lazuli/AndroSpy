@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
-namespace SV
+namespace Server.Views
 {
     public partial class AndroidAppBuilder : Form
     {

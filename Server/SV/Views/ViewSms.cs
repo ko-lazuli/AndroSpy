@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace SV
+namespace Server.Views
 {
     public partial class ViewSms : Form
     {

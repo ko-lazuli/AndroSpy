@@ -1,5 +1,5 @@
 ﻿using System.Net.Sockets;
-namespace SV
+namespace Server
 {
     public class Kurbanlar
     {

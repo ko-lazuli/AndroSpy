@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SV
+namespace Server.Views
 {
     public partial class Yuzde : Form
     {

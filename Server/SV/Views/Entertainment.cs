@@ -6,7 +6,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Windows.Forms;
 
-namespace SV
+namespace Server.Views
 {
     public partial class Entertainment : Form
     {

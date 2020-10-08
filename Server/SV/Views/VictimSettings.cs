@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace SV
+namespace Server.Views
 {
     public partial class VictimSettings : Form
     {
